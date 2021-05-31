@@ -1,0 +1,89 @@
+<div class="container-fluid savedJobMain" >
+    <div >
+        <div class="row savedJobContainer">
+
+            <div  class="col-md-9 mainContainer  mt-3" style="display: block; margin:auto">
+                <div  class="list-group mySavedListItems" style="border-radius: .5em;">
+                    <div *ngFor="let notify of Notifications"
+                     style="margin: 1px;padding: 0px;border-radius: .5em;">
+                    <div  class="list-group-item list-group-item-action mySavedItem newNotification" >
+                        <div  class="mySavedItemContent">
+                           
+                            <img [src]="notify.data.Auther.avatar" class="rounded-circle profileImg" style="width: 60px;height: 60px;">
+                        </div>
+                        
+                            <div class="notificationTextContent">
+                                <div>
+                                    Your friend  <a routerLink="/profile/{{notify.data.Auther.id}}" >{{notify.data.Auther.firstName}} {{notify.data.Auther.lastName}}</a>
+                                  <small >
+                                    puplish new post in {{notify.data.PostedDate.toDate() | date}}
+                                  </small>  
+                                    Go  to your Home to see <a [routerLink]="['/Home']"  >Go Home</a>
+
+                                </div>
+                            </div>
+                       
+                       <div ngbDropdown class="mySavedItemContent btnMoreDetails" placement="bottom-right">
+                           
+                            
+       <button name="" id="" class="btn mt-1"  role="button"  (click)="DeleteNotification(notify.id)"
+                            style="background-color: brown; color: white; border-radius: 5px;float:right ">
+                                <i class="far fa-trash-alt"></i>
+                       </button>
+                         
+                            <!-- <a ngbDropdownToggle type="text" class="btnMoreDetailsDots" id="dropdownMenuButton"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </a>
+                            <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+                                <a ngbDropdownItem href="#">
+                                    <i class="far fa-trash-alt"></i>
+                                    <strong>Delete</strong>
+                                    <div>
+                                        Delete this notification
+                                    </div>
+                                </a>
+                                <a ngbDropdownItem href="#">
+                                    <i class="fas fa-times-circle"></i>
+                                    <strong>Unfollow</strong>
+                                    <div>
+                                        Stop seeing user's updates
+                                    </div>
+                                </a>
+                                <a ngbDropdownItem href="#">
+                                    <i class="fas fa-bell-slash"></i>
+                                    <strong>Turn Off</strong>
+                                    <div>
+                                        Stop receiving notifications like this
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                   
+                    </div> </div> -->
+                </div>
+                 
+                <div  *ngIf="Notifications.length==0" class="spinnerContainer">
+                    <div class="spinner-border" style="width: 3rem; height: 3rem; color:#B4272D;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="Notifications.length==0">
+        <div class="noAboutImg" style="background-color: rgb(255, 255, 255); border-radius: .5em;
+        box-shadow: 2px 2px 5px gray  ;">
+          <br>
+          <p style="margin: 20px;">OOPS...! you Dont have any Notifications 
+            go and grow Up your Network Now </p>
+          <img
+            src="https://economictimes.indiatimes.com/thumb/msid-69417800,width-1200,height-900,resizemode-4,imgsize-205855/ai-in-social-media.jpg?from=mdr" 
+            style="width:50%;height: auto; border-radius: 50%;display: block;margin: auto;">
+            <a name="" id="" class="btn mb-3" [routerLink]="['/FullNetwork']" role="button" 
+            style="border-radius: 5px;color: white;background-color: brown; margin-left: 40%; margin-top: 5px;">
+            Go To Network</a>
+        </div>
+       
+      </div>

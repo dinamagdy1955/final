@@ -1,0 +1,31 @@
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel class="customclass1" id="toggle-1" title="Recent">
+    <ng-template ngbPanelContent>
+      <div class="card-body">
+        <a href="#">
+          <i class="fas fa-users usersIcon usersIconGroup "></i> Wazifa.com </a>
+        <div class="W-100%"><br></div>
+        <a href="#">
+          <i class="fas fa-hashtag usersIcon usersIconGroup"></i> linkedin </a>
+        <div class="W-100%"><br></div>
+        <a href="#">
+          <i class="fas fa-users usersIcon usersIconGroup "></i> job for all - jobs in Egypt</a>
+        <div class="W-100%"><br></div>
+        <a href="#">
+          <i class="fas fa-users usersIcon usersIconGroup "></i> jobs Egypt</a>
+        <div class="W-100%"><br></div>
+        <a href="#">
+          <i class="fas fa-users usersIcon usersIconGroup "></i> Google Flutter</a><br>
+      </div>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="toggle-2" title="Groups">
+    <ng-template ngbPanelContent>
+      <div class="card-body" *ngFor="let item of groups; let i = index">
+        <a href="#" routerLink="/Group/group-profile/{{item.id}}" routerLinkActive="router-link-active">
+          <i class="fas fa-users usersIcon usersIconGroup "></i> {{item.data.Name}} </a>
+        <div class="W-100%" *ngIf="i<groups.length-1"><br></div>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

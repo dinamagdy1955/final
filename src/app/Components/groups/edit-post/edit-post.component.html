@@ -1,0 +1,27 @@
+<ng-template #editPost let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h6 class="modal-title" id="modal-basic-title">{{'Edit Post' | translate}}</h6>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')"
+            [ngClass]="{'m-0 p-0': Lang == 'ar'}">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form [formGroup]='editPostForm' (ngSubmit)='updatePost()'>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <textarea class="form-control" name="Body" formControlName="Body" rows="5"
+                    placeholder="Type Your Edit..." required></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="c('Save click')">{{'Cancel' |
+                translate}}</button>
+            <button type="submit" class="btn btn-outline-primary btn-sm" [disabled]="!editPostForm.valid"
+                (click)="c('Save click');">{{'Edit' | translate}}</button>
+        </div>
+    </form>
+</ng-template>
+
+<button ngbDropdownItem (click)="open(editPost)" [ngClass]="{'text-right': Lang == 'ar'}">{{'Edit' |
+    translate}}</button>

@@ -1,0 +1,103 @@
+.profile-card-border {
+  border-radius: 10px;
+  border: 0.5px solid #c3c3c394;
+}
+.profile-small-p {
+  color: black;
+  margin-left: 8px;
+}
+.card-custom {
+  overflow: hidden;
+  min-height: 250px;
+  max-height: 380px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  border-radius: 10px;
+}
+
+.card-custom-img {
+  height: 100%;
+  // min-height: 120px;
+  /* border-color: inherit; */
+  background-size: auto;
+}
+.card-custom-img-com {
+  height: 5rem;
+  //min-height: 120px;
+  /* border-color: inherit; */
+  background-size: auto;
+}
+
+.card-custom-avatar img {
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90px;
+  height: 90px;
+}
+
+.circleBtn {
+  border-radius: 50%;
+  border-width: 0;
+  font-size: 1.3rem;
+}
+
+.modalHeaderIcon {
+  padding: 0% 2%;
+  font-size: 1.5rem;
+  color: #901b20;
+}
+
+.modalImg {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.modalCoverImg {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.user-Name {
+  margin: 0;
+}
+.user-JobTitel {
+  font-size: 0.8rem !important;
+  color: #6e6d6de7;
+  margin: 0;
+  margin-top: 3px;
+}
+.profile-Card-Edit {
+  opacity: 0;
+  color: #801818;
+  transition: 0.8s;
+}
+.profile-Card-UserDetails:hover .profile-Card-Edit {
+  transition: 0.8s;
+  opacity: 1;
+}
+.imgTop {
+  max-height: 100px !important;
+  width: 100%;
+}
+
+input.ng-dirty.ng-valid.ng-touched:not(form),
+input.ng-pristine.ng-valid.ng-touched:not(form) {
+  border-left: 5px solid #42a948 !important;
+}
+
+input.ng-touched.ng-dirty.ng-invalid:not(form),
+input.ng-touched.ng-pristine.ng-invalid:not(form) {
+  border-left: 5px solid #a94442 !important;
+}
+
+::ng-deep .tooltip-inner {
+  background-color: #a94442;
+}

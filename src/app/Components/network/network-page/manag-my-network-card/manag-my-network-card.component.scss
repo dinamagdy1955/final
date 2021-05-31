@@ -1,0 +1,53 @@
+
+.parentCard{
+    border-radius: .5em;
+    width: 100%;
+    height: auto;
+    padding: 1.5em;
+    box-shadow: 1px 1px 10px 1px rgb(211, 203, 203);
+    .card-header{
+        width: 100%;
+        height: auto;
+        text-align: center;
+        border-radius: 0px;
+        background-color: white;
+        border: none;
+        color: #68161ad5;
+    }
+}
+.header,.usersIconGroup1{
+    color: #b4272d;
+}
+.card_item{
+    color: #68161ad5;
+}
+.cardfooter{
+    color: #b4272d;
+    font-size: large; 
+}
+.Span{
+    color: #b4272d;
+}
+.ar{
+    text-align: right;
+}
+
+.en{
+    text-align: left;
+}
+.arr{
+    text-align: right;
+    align-content:right;
+    align-items: right;
+    float: right !important;
+}
+.arrr{
+  
+    float: left !important;
+}
+.arabic{
+    text-align: right;
+    align-content:right;
+    align-items: right;
+    float: left !important;
+}

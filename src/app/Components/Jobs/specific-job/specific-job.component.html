@@ -1,0 +1,217 @@
+<div>
+    <header>
+        <div class="btn-group">
+            <button type="button" class="btn rounded-pill btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Most Relevant
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn rounded-pill btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Any Time
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn rounded-pill btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                25 mi (40 km)
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="
+          btn
+          rounded-pill
+          btn-light
+          border-secondary
+          text-secondary
+          dropdown-toggle
+        " data-bs-toggle="dropdown" aria-expanded="false">
+                Company
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="
+          btn
+          rounded-pill
+          btn-light
+          border-secondary
+          text-secondary
+          dropdown-toggle
+        " data-bs-toggle="dropdown" aria-expanded="false">
+                Location
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="
+          btn
+          rounded-pill
+          btn-light
+          border-secondary
+          text-secondary
+          dropdown-toggle
+        " data-bs-toggle="dropdown" aria-expanded="false">
+                Job Type
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="
+          btn
+          rounded-pill
+          btn-light
+          border-secondary
+          text-secondary
+          dropdown-toggle
+        " data-bs-toggle="dropdown" aria-expanded="false">
+                More Filters
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content row">
+            <div class="news col-6 pt-4" style="overflow-y: scroll; height: 600px">
+                <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="company">
+                <div *ngFor="let item of list | filter:company " [ngClass]="{ selected: item.id === jobId }"
+                    (click)="showMore(item.id)" [routerLink]="['/jobs/specificjob']" [queryParams]="{id: item.id}"
+                    class="element mb-2 btn">
+                    <div class="img col-3 rounded-circle mr-2">
+                        <img class="card-img-top" [src]="item.data.companyLogoAvatar" />
+                    </div>
+                    <div class="ml-2 info col-9 text-left">
+                        <h4 class="font-weight-normal">{{ item.data.position.en }}</h4>
+                        <h5 class="font-weight-light">{{ item.data.company.en }}</h5>
+                        <h5 class="font-weight-light">{{ item.data.location.en }}</h5>
+                        <div><span class="text-success" *ngIf="item.data.postedDate != null">Posted In : {{
+                                item.data.postedDate.toDate() | date }} </span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="details position-sticky top-0 end-0 col-6 pt-4" style="overflow-y: scroll; height: 600px"
+                *ngIf="selectedJob != undefined">
+                <div class="elementCard mb-2">
+                    <div class="img " style="width:150px;">
+                        <img [src]="selectedJob.data.companyLogoAvatar" alt="" />
+                    </div>
+                    <div class="basics">
+                        <div class=" text-dark">
+                            <h4 class="font-weight-normal">{{ selectedJob.data.position.en }} <span
+                                    class="font-weight-light">( {{ selectedJob.data.worksFrom.en }})</span></h4>
+                        </div>
+                        <div>
+                            <h5 class="font-weight-light">Work for {{ selectedJob.data.company.en }} in <span
+                                    class="font-weight-light">{{ selectedJob.data.location.en }}</span></h5>
+                        </div>
+                        <div *ngIf="selectedJob.data.closingDate != null">will expire in : {{
+                            selectedJob.data.closingDate.toDate() | date }}</div>
+                        <div>{{ selectedJob.data.employmentType.en }}</div>
+                        <div>Level of Experience :{{ selectedJob.data.seniorityLevel.en }}</div>
+                        <span class="text-success" *ngIf="selectedJob.data.postedDate != null">Posted In : {{
+                            selectedJob.data.postedDate.toDate() | date }} </span>
+                    </div>
+                    <div class="save btn">
+                        <i class="fas fa-bookmark b1 savehover " style="font-size: 20px;"
+                            [ngStyle]="{'color':savedJobs.includes(selectedJob.id) ?'goldenrod':'black'}"
+                            (click)="saveUnsave(selectedJob.id)">
+                        </i>
+                    </div>
+                </div>
+                <div style="border-bottom:1px solid rgb(192, 191, 191); text-align: center;" class="pb-2">
+                    <div class=" pl-3 pr-3 btn apply justify-content-around applyBtn" (click)="Apply()"> <i
+                            class="fas fa-share-square" style="font-size: 1rem;"></i> Apply Now
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h6 style="color: #b4272d;">
+                        More Information about the Job :
+                    </h6>
+                    <p>{{ selectedJob.data.description.en.slice(0, x) }}...
+                        <button (click)="clicked(jobId)" *ngIf="selectedJob.data.description.en.length > 800"
+                            class="btn btn-link btn-sm p-0 mb-3 showLink">
+                            {{ showing }}
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #err let-modal>
+        <div>
+            <div class="modal-body">
+                <div class="applyBody">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Your application sent successfully !!!</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">
+                    OK
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</div>

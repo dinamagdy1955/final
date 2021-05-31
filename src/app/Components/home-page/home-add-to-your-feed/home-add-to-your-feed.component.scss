@@ -1,0 +1,74 @@
+.ar{
+    text-align: right;
+}
+.arr{
+    text-align: right;
+    margin-right: 20px;
+}
+.en{
+    text-align: left;
+}
+
+button{
+   border-radius: 2em;
+   padding: 0.3em;
+    padding-left: 1em; 
+    padding-right: 1em; 
+    border: 1px solid #b4272d;
+    font-size: 11px;
+    background-color: white !important;
+
+    span{
+        color:#b4272d;
+        font-weight: bold;
+    }
+  
+}
+p,h6{
+    color:#b4272d; 
+}
+small{
+    color: #68161ad5;
+}
+.card{
+   max-width: 540px ;
+    border:none
+}
+
+
+
+button:hover{
+
+    border-radius: 2em;
+    padding: 0.3em;
+     padding-left: 1em; 
+     padding-right: 1em; 
+     border: 2px solid #b4272d;font-size: 1vmax;
+     background-color: #b4272d !important;
+ 
+     span{
+         color: white;
+         font-weight: bold;
+     } 
+}
+.cardH4{
+     padding: 0.9em; 
+     font-size: 16px;
+     color: #b4272d;
+}
+img{
+ border-radius: 50% ;
+  padding-right: 0px;
+  height:60px;
+   width:60px;
+}
+.jobSmall{
+    font-size: 10px
+}
+.nameH6{
+    font-size: 12px;
+    font-weight: bold;
+}
+.LineHeight{
+    line-height:13px;
+}

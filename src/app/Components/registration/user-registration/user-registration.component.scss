@@ -1,0 +1,181 @@
+#loginLogo {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.header__logo {
+  height: 5rem;
+  margin-right: 0.3rem;
+}
+
+.header__separator {
+  border-right: 0.2rem solid #901b20;
+  height: 5.2rem;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  line-height: 2.16rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  word-spacing: 0;
+  color: #6c757d;
+  margin: 0.5rem 0 0 0.5rem;
+  width: 254px;
+}
+
+#loginLogo:hover {
+  text-decoration: none;
+}
+
+.header__logo-section {
+  padding-top: 0.8rem;
+}
+
+.header > .container,
+.header__logo-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userRegisterContainer {
+  margin: auto;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  padding: 1.5% 2.5%;
+  background-color: #ffffff;
+}
+
+#registerButton {
+  border-radius: 25px;
+  border: none;
+  padding: 7px 0px 7px 0px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #b4272d;
+  color: white;
+}
+
+#registerButton:hover {
+  background-color: #94151b;
+}
+
+#signin {
+  font-size: 1rem;
+  font-weight: 500;
+  width: fit-content;
+  padding: 2px 11px;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline;
+}
+
+#signin {
+  padding: 0px 11px;
+  line-height: 1.5;
+}
+
+#signin:hover {
+  background-color: #eeeeee;
+}
+
+#signin a {
+  color: #b4272d !important;
+}
+
+#signin:hover a {
+  color: #94151b !important;
+}
+
+input.ng-dirty.ng-valid.ng-touched:not(form) {
+  border-left: 5px solid #42a948 !important;
+}
+
+input.ng-touched.ng-dirty.ng-invalid:not(form) {
+  border-left: 5px solid #a94442 !important;
+}
+
+input.ng-touched.ng-pristine.ng-invalid:not(form) {
+  border-left: 5px solid #a94442 !important;
+}
+
+select.ng-dirty.ng-valid.ng-touched:not(form) {
+  border-left: 5px solid #42a948 !important;
+}
+
+select.ng-pristine.ng-invalid.ng-touched:not(form) {
+  border-left: 5px solid #a94442 !important;
+}
+
+select.ng-touched.ng-pristine.ng-invalid:not(form) {
+  border-left: 5px solid #a94442 !important;
+}
+
+::ng-deep .tooltip-inner {
+  background-color: #a94442;
+}
+
+.footerSignIn {
+  position: relative;
+  bottom: 5%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+}
+
+#footerSignInLinks {
+  margin: auto;
+}
+
+.footerSignIn a {
+  color: #474747;
+  font-size: 0.9rem;
+  margin: 0px 5px 0px 5px;
+}
+
+.footerSignIn a:hover {
+  color: #474747;
+}
+
+.languageDropup {
+  background: none !important;
+  border: none;
+  color: #474747;
+  font-size: 0.9rem;
+}
+
+.languageDropup > a {
+  padding: 0;
+}
+
+.errLogin {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-size: 100px;
+  margin: 5% 0%;
+  color: #901b20;
+}
+
+.icon {
+  padding: 1.4%;
+  background: white;
+  color: gray;
+  min-width: 50px;
+  text-align: center;
+  border: #ced4da solid 1px;
+  border-left: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+@media all and (max-width: 780px) {
+  .footerSignIn {
+    display: none;
+  }
+
+  .userRegisterContainer {
+    box-shadow: none;
+  }
+}

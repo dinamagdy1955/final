@@ -1,0 +1,159 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="../../../../assets/iti-logo.png" width="30" class="d-inline-block align-top" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" (click)='isMenuCollapsed = !isMenuCollapsed' data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" [ngbCollapse]="isMenuCollapsed"
+            id="navbarSupportedContent">
+            <ul class="navbar-nav text-lg-center custom-nav" [ngClass]="{'text-right': Lang == 'ar'}">
+                <li class="nav-item">
+
+                    <a class="nav-link visible-dot" [routerLink]="['Home']" routerLinkActive="active"
+                        (click)="isMenuCollapsed = true">
+                        <i class="fas fa-home d-lg-block"></i>
+                        <div class="container__indicator">
+                            <i class="fas fa-dot-circle"></i>
+                        </div>
+                        <span class="d-lg-block">{{'Home' | translate}}</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/Group']" routerLinkActive="active"
+                        (click)="isMenuCollapsed = true"><i class="fas fa-users d-lg-block"></i>{{'Groups' | translate}}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['FullNetwork']" routerLinkActive="active"
+                        (click)="isMenuCollapsed = true"><i class="fas fa-user-friends"></i><span
+                            class="d-lg-block">{{'Network' | translate}}</span>
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" [routerLink]="['/jobs']" routerLinkActive="router-link-active"
+                        (click)="isMenuCollapsed = true"><i class="fas fa-archive d-lg-block"></i>{{'Jobs' | translate}}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/Messages']" routerLinkActive="active"
+                        (click)="isMenuCollapsed = true">
+                        <i class="fas fa-comment-dots d-lg-block"></i>
+                        {{'Messaging' | translate}}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['Notification']" routerLinkActive="router-link-active"
+                        (click)="isMenuCollapsed = true"><i class="fas fa-bell d-lg-block"></i>{{'Notifications' |
+                        translate}}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+                    <a class="nav-link" ngbDropdownToggle id="navbarDropdown3" role="button">
+                        <img [src]="avatar" width="30" height="30" class="d-lg-block align-top" alt="">
+                        {{'Me' | translate}}
+                    </a>
+                    <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu pt-0"
+                        [ngClass]="{'text-right drop-me': Lang=='ar'}">
+                        <a class="dropdown-item text-center py-3" routerLink="/profile/{{uid}}"
+                            routerLinkActive="router-link-active" (click)="isMenuCollapsed = true">
+                            <img [src]="avatar" class="mx-auto" width="100" alt="" srcset="">
+                            <h3 class="">{{firstName}} {{lastName}}</h3>
+                            <h6 class="">{{jobTitle}}</h6>
+                        </a>
+                        <div class="dropdown-divider mt-0"></div>
+                        <h6 class="mx-3">{{'Account' | translate}}</h6>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">{{'Settings' | translate}}</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">{{'Help' | translate}}</a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="mx-3">{{'Languages' | translate}}</h6>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault(); translateSite('en')">English</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault(); translateSite('ar')">العربية</a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="mx-3">{{'Manage' | translate}}</h6>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">{{'Posts & Activity' |
+                            translate}}</a>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault()">{{'Posting Account' |
+                            translate}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a ngbDropdownItem href="#" (click)="$event.preventDefault();signOut();">{{'Sign Out' |
+                            translate}}</a>
+
+                    </div>
+                </li>
+
+            </ul>
+
+            <a class="toggle-btn btn" id="sidebarCollapse" role="button" (click)="toggleSideBar()">
+                <i class="fas fa-th d-lg-block"></i>
+                <span>{{'Social' | translate}}</span>
+            </a>
+
+        </div>
+
+    </div>
+</nav>
+<!-- Sidebar  -->
+<nav id="sidebar" [ngClass]="{'active': toggleStatus}">
+    <div id="dismiss" (click)="toggleSideBar()">
+        <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="sidebar-body">
+        <div class="card">
+            <div class="card-header">
+                <h4>Visit Our Sites</h4>
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+                <a href="https://www.facebook.com/ITI.eg" class="btn" target="_blank">
+                    <img src="../../../../assets/iti-logo-right.png" width="80" class="rounded-circle" />
+                    <div class="pt-1">ITI</div>
+                </a>
+                <a href="https://www.facebook.com/ITP.ITI" class="btn" target="_blank">
+                    <img src="../../../../assets/itp-logo.jpg" width="80" class="rounded-circle" />
+                    <div class="pt-1">ITP</div>
+                </a>
+                <a href="https://www.facebook.com/ITIFreelancingZones" class="btn" target="_blank">
+                    <img src="../../../../assets/itp-logo.jpg" width="80" class="rounded-circle" />
+                    <div class="pt-1">Freelancer Zones</div>
+                </a>
+                <a href="https://www.facebook.com/maharatech.Eg" class="btn" target="_blank">
+                    <img src="../../../../assets/mahara.png" width="80" class="rounded-circle" />
+                    <div class="pt-1">Mahara-Tech</div>
+                </a>
+                <a href="https://www.linkedin.com/school/information-technology-institute-iti-/" class="btn"
+                    target="_blank">
+                    <img src="../../../../assets/linked.png" width="80" class="rounded-circle" />
+                    <div class="pt-1">ITI-Page</div>
+                </a>
+                <a href="https://maharatech.gov.eg/" class="btn" target="_blank">
+                    <img src="../../../../assets/iti-logo.png" width="80" class="rounded-circle" />
+                    <div class="pt-1">MaharaSite</div>
+                </a>
+                <a href="http://iti.gov.eg/iti/home" class="btn" target="_blank">
+                    <img src="../../../../assets/iti-logo.png" width="80" class="rounded-circle" />
+                    <div class="pt-1">ITI-Site</div>
+                </a>
+                <a href="https://freelancingzones.com/" class="btn" target="_blank">
+                    <img src="../../../../assets/zones.jpg" width="80" class="rounded-circle" />
+                    <div class="pt-1">freelancerZones-Site</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="overlay" [ngClass]="{'active': toggleStatus}" (click)="toggleSideBar()"></div>
